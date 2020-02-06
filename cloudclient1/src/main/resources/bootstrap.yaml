@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: client1
+  cloud:
+    config:
+      enabled: true
+      label: master
+      profile: dev
+      uri: http://localhost:8181
+#  profiles:
+#    active: dev
+debug: false

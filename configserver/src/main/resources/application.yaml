@@ -8,4 +8,16 @@ spring:
     config:
       server:
         git:
-          uri:
+          uri: https://github.com/xia-deng/config-manager
+          username: XXXXXXXXXXXXXX
+          password: XXXXXXXXXXXXXX
+          default-label: master
+          search-paths: /
+          force-pull: true
+        native:
+          search-locations: classpath:/config
+debug: false
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8180/eureka/
