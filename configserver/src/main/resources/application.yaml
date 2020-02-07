@@ -4,20 +4,39 @@ server:
 spring:
   application:
     name: config-server
+  boot:
+    admin:
+      client:
+        enabled: true
+        url: http://localhost:8769
   cloud:
     config:
       server:
         git:
           uri: https://github.com/xia-deng/config-manager
-          username: XXXXXXXXXXXXXX
-          password: XXXXXXXXXXXXXX
+          username: xia_deng@yeah.net
+          password: dengli6370
           default-label: master
           search-paths: /
           force-pull: true
-        native:
-          search-locations: classpath:/config
+
+#±æµÿ≈‰÷√‘¥#
+#  cloud:
+#    config:
+#      server:
+#        native:
+#          search-locations: classpath:config/
+#  profiles:
+#    active: native
+#                    native:
+#                      search-locations: classpath:config/
 debug: false
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8180/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS

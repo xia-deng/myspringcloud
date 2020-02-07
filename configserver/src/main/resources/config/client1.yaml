@@ -1,0 +1,8 @@
+locale:
+  data:
+    age: 34
+    gender: female
+    name: Jam
+spring:
+  application:
+    name: client1
