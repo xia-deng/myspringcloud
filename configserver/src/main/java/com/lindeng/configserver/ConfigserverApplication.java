@@ -1,5 +1,8 @@
 package com.lindeng.configserver;
 
+import com.netflix.loadbalancer.BestAvailableRule;
+import com.netflix.loadbalancer.IRule;
+import com.netflix.loadbalancer.RoundRobinRule;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -23,5 +26,15 @@ public class ConfigserverApplication {
     @LoadBalanced
     public RestTemplate restTemplate() {
         return new RestTemplate();
+    }
+
+    /**自定义配置ribbon负载均衡算法
+     * @return
+     */
+    @Bean
+    public IRule myRule() {
+        //return new RoundRobinRule();//轮询
+        //return new RetryRule();//重试
+        return new RoundRobinRule();
     }
 }

@@ -14,8 +14,8 @@ spring:
       server:
         git:
           uri: https://github.com/xia-deng/config-manager
-          username: xia_deng@yeah.net
-          password: dengli6370
+          username: XXXXXXXXXXXX
+          password: XXXXXXXXXXX
           default-label: master
           search-paths: /
           force-pull: true

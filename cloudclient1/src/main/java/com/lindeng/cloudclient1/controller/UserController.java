@@ -79,7 +79,8 @@ public class UserController {
      */
     public JsonNode fallBack(String id) {
          ObjectNode objectNode = JsonNodeFactory.instance.objectNode();
-         objectNode.put("HystrixCommand", "service is invalid.");
+         objectNode.put("code", "-1");
+         objectNode.put("hystrix", port);
          return objectNode;
     }
 }

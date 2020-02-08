@@ -16,10 +16,10 @@ public class ConfigController {
 
     @GetMapping("/users")
     public String fetchUser(){
-        List<String> strings = new ArrayList<>(100);
+        StringBuffer strings = new StringBuffer("\n");
         for (int i = 0; i < 100; i++) {
-            strings.add(restTemplate.getForEntity("http://client1/users/1", String.class).getBody());
+            strings.append(restTemplate.getForEntity("http://client1/users/1", String.class).getBody()).append("\n");
         }
-       return "".join(",",strings);
+       return strings.toString();
     }
 }
