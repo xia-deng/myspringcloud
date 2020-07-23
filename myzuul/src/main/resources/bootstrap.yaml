@@ -1,0 +1,33 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8180/eureka
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
+
+spring:
+  application:
+    name: client1
+  boot:
+    admin:
+      client:
+        enabled: true
+        url: http://localhost:8769
+  cloud:
+    config:
+      enabled: true
+      label: master
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: config-server
+      name: client1
+    #      uri: http://localhost:8181
+#  profiles:
+#    active: dev
+debug: false
+
+
+

@@ -1,0 +1,21 @@
+server:
+  #服务端口
+  port: 8171
+management:
+  server:
+    port: 8171
+  endpoints:
+    web:
+      base-path: /actuator #默认是/actuator 前缀，可以在这里修改
+      exposure:
+        include: "*"
+
+#启动断路器，会有默认的一些配置，比如超时
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds:  30000
+
